@@ -1,0 +1,54 @@
+Files included:
+    lab1b-client.c - client source file
+    lab1b-server.c - server source file
+    common.h, common.c - additional functions shared by the
+    	      	         client and server programs including
+			 wrapper functions for system calls
+			 and compression and decompression
+			 functions
+    Makefile - builds client and server programs, makes tarball
+    README - this file
+
+Synopsis:
+    Two programs, lab1b-server and lab1b-client interact as a
+    client and server with the Telnet protocol using sockets.
+    The server can also be configured to forward the data stream
+    to a shell specified by the --shell option. Data can also be
+    compressed from both ends with the --compress option, and the
+    client can also log with the --log option.
+
+Client usage:
+    ./lab1b-client --port=<num> [--log=<filename>] [--compress]
+
+Client options:
+    --port=<num>     - specify port number (REQUIRED)
+    --log=<filename> - log bytes sent and received to the file
+    		       specified by filename
+    --compress       - compress data to the server and decompress
+    		       data from the server
+
+Server usage:
+    ./lab1b-server --port=<num> [--shell=<program>] [--compress]
+
+Server options:
+    --port=<num>      - specify port number (REQUIRED)
+    --shell=<program> - specify shell program to use
+    --compress	      - compress data to the client and decompress
+    		        data from client
+
+Makefile targets:
+    make: creates programs lab1b-server and lab1b-client
+    make lab1b-server: creates lab1b-server program
+    make lab1b-client: creates lab1b-client program
+    make dist: creates the tarball
+    make clean: cleans up by removing binary files and tarball
+        created by the targets of Makefile
+
+References:
+  * socket code mostly derived from the following tutorial
+    by Robert Ingalls (linked on the project specs):
+      http://www.cs.rpi.edu/~moorthy/Courses/os98/Pgms/socket.html
+
+  * zlib compression and decompression code researched from
+    this tutorial on the zlib website:
+      https://zlib.net/zlib_how.html
