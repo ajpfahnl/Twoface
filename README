@@ -1,6 +1,6 @@
 Files included:
-    lab1b-client.c - client source file
-    lab1b-server.c - server source file
+    twoface-client.c - client source file
+    twoface-server.c - server source file
     common.h, common.c - additional functions shared by the
     	      	         client and server programs including
 			 wrapper functions for system calls
@@ -18,7 +18,7 @@ Synopsis:
     client can also log with the --log option.
 
 Client usage:
-    ./lab1b-client --port=<num> [--log=<filename>] [--compress]
+    ./twoface-client --port=<num> [--log=<filename>] [--compress]
 
 Client options:
     --port=<num>     - specify port number (REQUIRED)
@@ -28,7 +28,7 @@ Client options:
     		       data from the server
 
 Server usage:
-    ./lab1b-server --port=<num> [--shell=<program>] [--compress]
+    ./twoface-server --port=<num> [--shell=<program>] [--compress]
 
 Server options:
     --port=<num>      - specify port number (REQUIRED)
@@ -37,9 +37,9 @@ Server options:
     		        data from client
 
 Makefile targets:
-    make: creates programs lab1b-server and lab1b-client
-    make lab1b-server: creates lab1b-server program
-    make lab1b-client: creates lab1b-client program
+    make: creates programs twoface-server and twoface-client
+    make twoface-server: creates twoface-server program
+    make twoface-client: creates twoface-client program
     make dist: creates the tarball
     make clean: cleans up by removing binary files and tarball
         created by the targets of Makefile

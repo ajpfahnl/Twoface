@@ -1,9 +1,3 @@
-/*
- File: lab1b-server.c
- NAME: Arnold Pfahnl
- EMAIL: ajpfahnl@gmail.com
- ID: 305176399
- */
 #include <termios.h>
 #include <unistd.h>
 #include <sys/wait.h>
@@ -311,14 +305,14 @@ int main(int argc, char * argv[]) {
                 compress_set = true;
                 break;
             default:
-                fprintf(stderr, "usage: ./lab1b-server --port=<num> [--shell=<program>] [--compress]\n");
+                fprintf(stderr, "usage: ./twoface-server --port=<num> [--shell=<program>] [--compress]\n");
                 exit(1);
         }
     }
     
     // --port mandatory
     if (!port_set) {
-        fprintf(stderr, "usage: ./lab1b-server --port=<num> [--shell=<program>] [--compress]\n");
+        fprintf(stderr, "usage: ./twoface-server --port=<num> [--shell=<program>] [--compress]\n");
         exit(1);
     }
     

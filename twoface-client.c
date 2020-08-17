@@ -1,9 +1,3 @@
-/*
- File: lab1b-client.c
- NAME: Arnold Pfahnl
- EMAIL: ajpfahnl@gmail.com
- ID: 305176399
- */
 #include <termios.h>
 #include <unistd.h>
 #include <sys/wait.h>
@@ -266,13 +260,13 @@ int main(int argc, char * argv[]) {
                 compress_set = true;
                 break;
             default:
-                fprintf(stderr, "usage: ./lab1b-client --port=<num> [--log=<filename>] [--compress]\n");
+                fprintf(stderr, "usage: ./twoface-client --port=<num> [--log=<filename>] [--compress]\n");
                 exit(1);
         }
     }
     // --port is mandatory
     if (!port_set) {
-        fprintf(stderr, "usage: ./lab1b-client --port=<num> [--log=<filename>] [--compress]\n");
+        fprintf(stderr, "usage: ./twoface-client --port=<num> [--log=<filename>] [--compress]\n");
         exit(1);
     }
     
